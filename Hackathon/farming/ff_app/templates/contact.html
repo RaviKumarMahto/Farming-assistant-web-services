@@ -1,0 +1,42 @@
+{% include 'header.html'%}
+
+<div class="contact_us">
+    <h3> Contact Us</h3>
+<form action="//submit.form" id="ContactUs100" method="post" onsubmit="return ValidateForm(this);">
+    <script type="text/javascript">
+    function ValidateForm(frm) {
+    if (frm.Name.value == "") { alert('Name is required.'); frm.Name.focus(); return false; }
+    if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
+    if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
+    if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
+    return true; }
+    </script>
+    <table style="width:100%;max-width:550px;border:0;" cellpadding="8" cellspacing="0">
+    <tr> <td>
+    <label for="Name">Name*:</label> 
+    </td> <td>
+    <input name="Name" type="text"placeholder="Name..." maxlength="60" style="width:100%;max-width:250px;" /> <br><br>
+    </td> </tr> <tr> <td>
+    <label for="PhoneNumber">Phone number:</label>
+    </td> <td>
+    <input name="PhoneNumber" type="text" maxlength="43" placeholder="Phone number..." style="width:100%;max-width:250px;" /> <br><br>
+    </td> </tr> <tr> <td>
+    <label for="FromEmailAddress">Email address*:</label>
+    </td> <td>
+    <input name="FromEmailAddress" type="text" maxlength="90" placeholder="Email address..." style="width:100%;max-width:250px;" /> <br><br>
+    </td> </tr> <tr> <td>
+    <label for="Comments">Comments*:</label>
+    </td> <td>
+    <textarea name="Comments" rows="7" placeholder="Comment here....." cols="40" style="width:100%;max-width:350px;"></textarea> <br><br>
+    </td> </tr> <tr> <td>
+    </td> <td>
+        {% comment %} <div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email"></a></div> {% endcomment %}
+        <input name="skip_Submit" type="submit" value="Submit" />
+        {% comment %} <script src="https://www.100forms.com/js/FORMKEY:8JH78FYWMPPX/SEND:my@email.com" type="text/javascript"></script> {% endcomment %}
+    </td> </tr>
+</table>
+</form>
+
+</div>
+
+    {% include 'footer.html' %}

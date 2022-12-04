@@ -1,0 +1,119 @@
+{% include 'header.html' %}
+{% load static %}
+
+{% comment %} <div class="body_image">
+
+</div> {% endcomment %}
+
+<div class="block">
+
+</div>
+
+
+
+
+<div class="image_slider">
+
+
+
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="{% static 'media/background.jpg'%}" style="width:100%">
+      <!-- <div class="text">London, Ebgland</div> -->
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="{% static 'media/grapes.jpg'%}" style="width:100%">
+      <!-- <div class="text">Sunset in Romania</div> -->
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="{% static 'media/peddy.jpg'%}" style="width:100%">
+      <!-- <div class="text">New York, USA</div> -->
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+</div>
+
+
+<div class="about_center">
+  <div class="about_section">
+    <h3> About Us </h3>
+
+    <p>
+      The agricultural sector is of vital importance for the region. It is undergoing a process of transition to a
+      market economy, with substantial changes in the social, legal, structural, productive and supply set-ups, as
+      is the case with all other sectors of the economy. These changes have been accompanied by a decline in
+      agricultural production for most countries, and have affected also the national seed supply sectors of the
+      region. The region has had to face problems of food insecurity and some countries have needed food aid for
+      IDPs and refugees. </p>
+    <p> <br>
+      Due to the relatively low demographic pressure projected for the future, the presence of some favourable
+      types of climates and other positive factors, including a very wide formal seed supply sector, it should be
+      possible to overcome problems of food insecurity in the region as a whole, and even to use this region to
+      provide food to other food-deficient regions. Opportunities must therefore be created to reach these
+      results. </p>
+    <p> <br>
+      In order to address the main constraints affecting the development of the national and regional seed
+      supplies that are mentioned here, the region requires integrated efforts by all national and international
+      stakeholders and institutions involved in seed supply and plant genetic resource management. On practical
+      issues, lessons learned by some countries could be shared with other countries; e.g. on how to progress with
+      the transition or how to recognize the most immediate needs of farmers. Appropriate policies should also be
+      established, at various levels, in order to facilitate seed investment and development in the region. </p>
+
+
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    let timeoutId = null;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+
+    showSlides();
+    function currentSlide(index) {
+      slideIndex = index;
+      showSlides();
+    }
+    function plusSlides(step) {
+
+      if (step < 0) {
+        slideIndex -= 2;
+
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+      }
+
+      showSlides();
+    }
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        dots[i].classList.remove('active');
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add('active');
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+  </script>
+</div>
+
+
+
+{% include 'footer.html' %}

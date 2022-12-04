@@ -1,0 +1,37 @@
+.services{
+    box-sizing: border-box;
+    padding: 8rem;
+}
+
+.container {
+    width: 90%;
+    height: 70vh;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img {
+    width: 200px;
+    border-radius: 5px;
+    height: 20rem;
+}
+
+.box {
+    width: 200px;
+    margin: 0 8px;
+    box-shadow: 0 0 20px 2px;
+    /* rgba(0, 0, 0, 0.1); */
+    transition: 1s all;
+}
+
+.box .box :hover {
+    transform: scale(1.3);
+    z-index: 2;
+}
+
+.box h4{
+    text-align: center;
+}

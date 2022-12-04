@@ -1,0 +1,12 @@
+.contact_us{
+    margin: 6rem 25rem 8rem 25rem;
+    display: block;
+    border: .05rem ridge #512afd;
+    padding: 2rem;
+    box-shadow: 10px 5px 5px #00061e;
+    color: #512afd;
+}
+
+h3{
+    text-align: center;
+}
